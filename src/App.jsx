@@ -15,10 +15,15 @@ import ColorfulMessage from "./components/ColorfulMessage";
  *   * Some_component
  */
 const App = () => {
+  const [num, setNum] = useState(0);
+  const [faceShowFlag, setFaceShowFlag] = useState(true);
+  console.log(`レンダリング${num} ${faceShowFlag}`);
   const onClickCountUp = () => {
     setNum(num + 1);
   };
-  const [num, setNum] = useState(0);
+  const onClickSwitchShowFlag = () => {
+    setFaceShowFlag(!faceShowFlag);
+  };
   return (
     // React.Fragmentは書かなくてもよい
     <>
@@ -27,6 +32,8 @@ const App = () => {
       <ColorfulMessage color="pink">元気です</ColorfulMessage>
       <button onClick={onClickCountUp}>カウントアップ</button>
       <p>{num}</p>
+      <button onClick={onClickSwitchShowFlag}>on/off</button>
+      {faceShowFlag && <p>(^_-)-☆</p>}
     </>
   );
 };
