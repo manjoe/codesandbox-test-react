@@ -1,5 +1,5 @@
 import React from "react";
-
+import ColorfulMessage from "./components/ColorfulMessage";
 /**
  * # コンポーネントの命名規則
  * パスカルケースで命名する
@@ -16,20 +16,12 @@ import React from "react";
  */
 const App = () => {
   const onClickButton = () => alert();
-  const contentStyle = {
-    color: "blue",
-    fontSize: "18px"
-  };
-  const contentLedyStyle = {
-    color: "pink",
-    fontSize: "18px"
-  };
   return (
     // React.Fragmentは書かなくてもよい
     <>
       <h1 style={{ color: "red" }}>こんにちは</h1>
-      <p style={contentStyle}>お元気ですか？</p>
-      <p style={contentLedyStyle}>元気です</p>
+      <ColorfulMessage color="blue" message="お元気ですか？" />
+      <ColorfulMessage color="pink" message="元気です" />
       <button onClick={onClickButton}>ボタン</button>
     </>
   );
