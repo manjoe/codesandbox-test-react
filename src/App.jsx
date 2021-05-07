@@ -24,6 +24,11 @@ const App = () => {
   const onClickSwitchShowFlag = () => {
     setFaceShowFlag(!faceShowFlag);
   };
+  if (num % 3 === 0) {
+    setFaceShowFlag(true);
+  } else {
+    setFaceShowFlag(false);
+  }
   return (
     // React.Fragmentは書かなくてもよい
     <>
