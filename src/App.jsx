@@ -20,8 +20,8 @@ const App = () => {
     // React.Fragmentは書かなくてもよい
     <>
       <h1 style={{ color: "red" }}>こんにちは</h1>
-      <ColorfulMessage color="blue" message="お元気ですか？" />
-      <ColorfulMessage color="pink" message="元気です" />
+      <ColorfulMessage color="blue">お元気ですか？</ColorfulMessage>
+      <ColorfulMessage color="pink">元気です</ColorfulMessage>
       <button onClick={onClickButton}>ボタン</button>
     </>
   );
