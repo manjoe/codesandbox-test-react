@@ -20,11 +20,16 @@ const App = () => {
     color: "blue",
     fontSize: "18px"
   };
+  const contentLedyStyle = {
+    color: "pink",
+    fontSize: "18px"
+  };
   return (
     // React.Fragmentは書かなくてもよい
     <>
       <h1 style={{ color: "red" }}>こんにちは</h1>
       <p style={contentStyle}>お元気ですか？</p>
+      <p style={contentLedyStyle}>元気です</p>
       <button onClick={onClickButton}>ボタン</button>
     </>
   );
