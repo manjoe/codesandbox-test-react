@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ColorfulMessage from "./components/ColorfulMessage";
 /**
  * # コンポーネントの命名規則
@@ -24,13 +24,25 @@ const App = () => {
   const onClickSwitchShowFlag = () => {
     setFaceShowFlag(!faceShowFlag);
   };
-  if (num > 0) {
-    if (num % 3 === 0) {
-      faceShowFlag || setFaceShowFlag(true);
-    } else {
-      faceShowFlag && setFaceShowFlag(false);
+  // 初回レンダリングのみ通したい場合
+  useEffect(() => {
+    console.log("useEffect");
+  }, []);
+  // numの更新時に通したい場合
+  // eslintで警告がでる
+  //   useEffect内で利用される変数は、第２引数で取得されるべきでは？というエラーだが、今回は、不要な警告なので警告を出さないようにする
+  useEffect(() => {
+    console.log(`useEffect ${num}`);
+    if (num > 0) {
+      if (num % 3 === 0) {
+        faceShowFlag || setFaceShowFlag(true);
+      } else {
+        faceShowFlag && setFaceShowFlag(false);
+      }
     }
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [num]);
+
   return (
     // React.Fragmentは書かなくてもよい
     <>
